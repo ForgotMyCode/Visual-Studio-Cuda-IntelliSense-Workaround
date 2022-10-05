@@ -22,3 +22,11 @@ dim3 blockRes( ..., ..., ...);
 
 myKernel CUDA_ARGS(gridRes, blockRes) (args);  // OK
 ```
+
+Extra:
+
+```c
+__syncthreads();  // false alarm
+
+CUDA_HIDE_ERRORS(__syncthreads());  // OK
+```
