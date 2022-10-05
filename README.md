@@ -23,7 +23,7 @@ dim3 blockRes( ..., ..., ...);
 myKernel CUDA_ARGS(gridRes, blockRes) (args);  // OK
 ```
 
-Extra:
+But wait, there is more:
 
 ```c
 __syncthreads();  // false alarm
@@ -38,7 +38,7 @@ __syncthreads();  // false alarm
 CUDA_HIDE_ERRORS(__syncthreads());  // OK
 ```
 
-There is also a workaround that properly loads the functions like `__syncthread` mentioned above. To make it work properly make you sure the `#include "cudaargs.h"` is **before any cuda includes**.
+There is also a workaround that properly loads the functions like `__syncthreads` mentioned above. To make it work properly, make you sure the `#include "cudaargs.h"` is **before any cuda includes**.
 
 ```c
 // include this first
