@@ -31,7 +31,9 @@ __syncthreads();  // false alarm
 ```
 
 ```c
+// include this first
 #include "cudaargs.h"
+// then other cuda related includes ...
 ...
 // __syncthreads will actually not cause errors anymore when "cudaargs.h" is properly (first) included,
 // but if there is ever anything that causes false errors, you can use this
