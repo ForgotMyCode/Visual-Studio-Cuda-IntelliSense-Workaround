@@ -14,7 +14,7 @@ myKernel <<<gridRes, blockRes>>> (args);  // E0029 false alarm
 Using this workaround, the cuda arguments don't exist from the point of view of IntelliSense. The compiled result is equivalent.
 
 ```c
-#include "kernelargs.h"
+#include "cudaargs.h"
 ...
 
 dim3 gridRes( ..., ..., ...);
