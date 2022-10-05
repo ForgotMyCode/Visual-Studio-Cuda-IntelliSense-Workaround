@@ -28,11 +28,21 @@ Extra:
 ```c
 __syncthreads();  // false alarm
 
+```
+
+```c
+#include "cudaargs.h"
+...
+// __syncthreads will actually not cause errors anymore when "cudaargs.h" is properly (first) included,
+// but if there is ever anything that causes false errors, you can use this
 CUDA_HIDE_ERRORS(__syncthreads());  // OK
 ```
 
 There is also a workaround that properly loads the functions like `__syncthread` mentioned above. To make it work properly make you sure the `#include "cudaargs.h"` is **before any cuda includes**.
 
 ```c
+#include "cudaargs.h"
+...
+
 __syncthreads();  // OK
 ```
