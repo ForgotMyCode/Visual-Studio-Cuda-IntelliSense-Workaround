@@ -32,3 +32,7 @@ CUDA_HIDE_ERRORS(__syncthreads());  // OK
 ```
 
 There is also a workaround that properly loads the functions like `__syncthread` mentioned above. To make it work properly make you sure the `#include "cudaargs.h"` is **before any cuda includes**.
+
+```c
+__syncthreads();  // OK
+```
