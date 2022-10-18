@@ -1,3 +1,5 @@
+// https://github.com/ForgotMyCode/Visual-Studio-Cuda-IntelliSense-Workaround
+
 #pragma once
 
 #ifdef __INTELLISENSE__
